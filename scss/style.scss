@@ -351,25 +351,8 @@ a {
 			text-decoration: none;
 		}
 		.icon-cross {
-			position: absolute;
-			width: 35px;
-			height: 35px;
-			display: inline-block;
-			background: $dark;
-			bottom: 15px;
-			left: 50%;
-			transform: translateX(-50%);
-			margin-bottom: -17.5px;
-			border-radius: 50%;
-			opacity: 0;
-			visibility: hidden;
-			transition: .3s all ease;
-			img {
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-			}
+			// Ẩn dấu cộng trên card sản phẩm khi hover
+			display: none;
 		}
 		&:before {
 			bottom: 0;
@@ -1203,6 +1186,13 @@ a {
 	}
 }
 
+// Footer adjustments for account/profile page
+.account-section + .footer-section {
+	.sofa-img {
+		display: none;
+	}
+}
+
 .service {
 	line-height: 1.5;
 
@@ -1909,3 +1899,9 @@ textarea {
 
 // Import Blog Detail Styles
 @import 'blog-detail';
+
+// Import Product Detail Styles
+@import 'product-detail';
+
+// Import Profile / Account Styles
+@import 'profile';
