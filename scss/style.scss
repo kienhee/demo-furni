@@ -128,7 +128,10 @@ a {
 // Hero 
 .hero {
 	background: $primary;
-	padding: calc(4rem - 30px) 0 0rem 0;
+	padding: 2rem 0 1rem 0;
+	@media (min-width: $sm) {
+		padding: calc(3rem - 20px) 0 1.5rem 0;
+	}
 	@media (min-width: $md) {
 		padding: calc(4rem - 30px) 0 4rem 0;
 	}
@@ -137,9 +140,12 @@ a {
 	}
 	
 	.intro-excerpt {
-		
 		position: relative;
 		z-index: 4;
+		margin-bottom: 2rem;
+		@media (min-width: $md) {
+			margin-bottom: 0;
+		}
 		@media (min-width: $lg) {
 			max-width: 450px;
 		}
@@ -147,54 +153,118 @@ a {
 	h1 {
 		font-weight: 700;
 		color: $white;
-		margin-bottom: 30px;
-
+		margin-bottom: 1rem;
+		font-size: 28px;
+		line-height: 1.2;
+		@media (min-width: $sm) {
+			font-size: 32px;
+			margin-bottom: 1.5rem;
+		}
+		@media (min-width: $md) {
+			font-size: 40px;
+			margin-bottom: 2rem;
+		}
+		@media (min-width: $lg) {
+			font-size: 48px;
+			margin-bottom: 30px;
+		}
 		@media (min-width: $xxl) {
 			font-size: 54px;
 		}
 	}
 	p {
 		color: rgba($white, .5);
-		margin-botom: 30px;
+		margin-bottom: 1.5rem;
+		font-size: 14px;
+		line-height: 1.6;
+		@media (min-width: $sm) {
+			font-size: 15px;
+			margin-bottom: 2rem;
+		}
+		@media (min-width: $md) {
+			font-size: 16px;
+			margin-bottom: 2.5rem;
+		}
+		@media (min-width: $lg) {
+			margin-bottom: 30px;
+		}
+	}
+	.btn {
+		font-size: 14px;
+		padding: 10px 20px;
+		margin-bottom: 0.5rem;
+		display: inline-block;
+		width: auto;
+		@media (min-width: $sm) {
+			font-size: 15px;
+			padding: 12px 25px;
+			margin-bottom: 0;
+		}
+		@media (min-width: $md) {
+			font-size: 16px;
+			padding: 12px 30px;
+		}
 	}
 	.hero-img-wrap {
 		position: relative;
+		margin-top: 2rem;
+		text-align: center;
+		@media (min-width: $md) {
+			margin-top: 0;
+			text-align: left;
+		}
 		img {
 			position: relative;
 			top: 0px;
 			right: 0px;
 			z-index: 2;
-			max-width: 780px;
-			left: -20px;
+			max-width: 100%;
+			width: 100%;
+			height: auto;
+			left: 0;
+			@media (min-width: $sm) {
+				max-width: 90%;
+			}
 			@media (min-width: $md) {
-				right: 0px;
+				max-width: 780px;
 				left: -100px;
-
 			}
 			@media (min-width: $lg) {
 				left: 0px;
 				top: -80px;
 				position: absolute;
 				right: -50px;
+				max-width: 780px;
 			}
 			@media (min-width: $xl) {
 				left: 0px;
 				top: -80px;
-		
 				right: -100px;
 			}
-			
 		}
 		&:after {
 			content: "";
 			position: absolute;
-			width: 255px;
-			height: 217px;
+			width: 150px;
+			height: 127px;
 			background-image: url('../images/dots-light.svg');
 			background-size: contain;
 			background-repeat: no-repeat;
-			right: -100px;
-			top: -0px;
+			right: -50px;
+			top: -20px;
+			display: none;
+			@media (min-width: $md) {
+				display: block;
+				width: 200px;
+				height: 170px;
+				right: -80px;
+			}
+			@media (min-width: $lg) {
+				width: 255px;
+				height: 217px;
+				right: -100px;
+				top: -0px;
+			}
 			@media (min-width: $xl) {
 				top: -40px;
 			}
@@ -490,36 +560,162 @@ a {
 
 // Testimonial Section
 .testimonial-section {
-	padding: 3rem 0 7rem 0;
+	padding: 2rem 0 4rem 0;
+	@media (min-width: $sm) {
+		padding: 2.5rem 0 5rem 0;
+	}
+	@media (min-width: $md) {
+		padding: 3rem 0 6rem 0;
+	}
+	@media (min-width: $lg) {
+		padding: 3rem 0 7rem 0;
+	}
+	.section-title {
+		font-size: 24px;
+		margin-bottom: 2rem;
+		@media (min-width: $sm) {
+			font-size: 26px;
+			margin-bottom: 2.5rem;
+		}
+		@media (min-width: $md) {
+			font-size: 28px;
+			margin-bottom: 3rem;
+		}
+		@media (min-width: $lg) {
+			font-size: 32px;
+		}
+	}
 }
 .testimonial-slider-wrap {
 	position: relative;
 
 	.tns-inner {
-		padding-top: 30px;
+		padding-top: 20px;
+		@media (min-width: $sm) {
+			padding-top: 25px;
+		}
+		@media (min-width: $md) {
+			padding-top: 30px;
+		}
 	}
 	.item {
 		.testimonial-block {
+			padding: 0 1rem;
+			@media (min-width: $sm) {
+				padding: 0 1.5rem;
+			}
+			@media (min-width: $md) {
+				padding: 0 2rem;
+			}
+			@media (min-width: $lg) {
+				padding: 0;
+			}
 			blockquote {
-				font-size: 16px;
+				font-size: 15px;
+				line-height: 1.6;
+				margin-bottom: 1.5rem;
+				@media (min-width: $sm) {
+					font-size: 16px;
+					line-height: 1.7;
+					margin-bottom: 2rem;
+				}
 				@media (min-width: $md) {
 					line-height: 32px;
 					font-size: 18px;
+					margin-bottom: 2.5rem;
+				}
+				@media (min-width: $lg) {
+					margin-bottom: 3rem;
+				}
+				p {
+					margin-bottom: 0;
+				}
+			}
+			.testimonial-rating {
+				margin-bottom: 1.5rem;
+				@media (min-width: $sm) {
+					margin-bottom: 2rem;
+				}
+				@media (min-width: $md) {
+					margin-bottom: 2.5rem;
+				}
+				@media (min-width: $lg) {
+					margin-bottom: 2rem;
+				}
+				i {
+					font-size: 16px;
+					margin: 0 2px;
+					color: $secondary;
+					@media (min-width: $sm) {
+						font-size: 17px;
+					}
+					@media (min-width: $md) {
+						font-size: 20px;
+						margin: 0 3px;
+					}
 				}
 			}
 			.author-info {
 				.author-pic {
-					margin-bottom: 20px;
+					margin-bottom: 1rem;
+					@media (min-width: $sm) {
+						margin-bottom: 1.25rem;
+					}
+					@media (min-width: $md) {
+						margin-bottom: 1.5rem;
+					}
+					@media (min-width: $lg) {
+						margin-bottom: 20px;
+					}
 					img {
-						max-width: 80px;
+						max-width: 60px;
+						width: 60px;
+						height: 60px;
 						border-radius: 50%;
+						object-fit: cover;
+						@media (min-width: $sm) {
+							max-width: 70px;
+							width: 70px;
+							height: 70px;
+						}
+						@media (min-width: $md) {
+							max-width: 80px;
+							width: 80px;
+							height: 80px;
+						}
 					}
 				}
 				h3 {
-					font-size: 14px;
+					font-size: 13px;
 					font-weight: 700;
 					color: $dark;
-					margin-bottom: 0;
+					margin-bottom: 0.25rem;
+					@media (min-width: $sm) {
+						font-size: 14px;
+					}
+					@media (min-width: $md) {
+						font-size: 15px;
+					}
+					@media (min-width: $lg) {
+						font-size: 14px;
+						margin-bottom: 0;
+					}
+				}
+				.position {
+					font-size: 12px;
+					color: rgba($dark, 0.6);
+					margin-bottom: 0.5rem;
+					@media (min-width: $sm) {
+						font-size: 13px;
+						margin-bottom: 0.75rem;
+					}
+					@media (min-width: $md) {
+						font-size: 14px;
+						margin-bottom: 1rem;
+					}
+					@media (min-width: $lg) {
+						margin-bottom: 1rem;
+					}
 				}
 			}
 
@@ -537,23 +733,41 @@ a {
 		> span {
 			cursor: pointer;
 			position: absolute;
-			width: 58px;
-			height: 58px;
-			line-height: 58px;
+			width: 45px;
+			height: 45px;
+			line-height: 45px;
 			border-radius: 50%;
 			background: rgba($primary, .1);
 			color: $dark;
 			transition: .3s all ease;
+			font-size: 14px;
+			@media (min-width: $md) {
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 16px;
+			}
+			@media (min-width: $lg) {
+				width: 58px;
+				height: 58px;
+				line-height: 58px;
+			}
 			&:hover {
 				background: $primary;
 				color: $white;
 			}
 		}
 		.prev {
-			left: -10px;
+			left: -5px;
+			@media (min-width: $md) {
+				left: -10px;
+			}
 		}
 		.next {
-			right: 0;
+			right: -5px;
+			@media (min-width: $md) {
+				right: 0;
+			}
 		}
 	}
 	.tns-nav {
@@ -639,12 +853,70 @@ a {
 			}
 		}
 	}
+
+	// Pagination Styles
+	.pagination {
+		margin-top: 3rem;
+		.page-item {
+			margin: 0 5px;
+			.page-link {
+				border-radius: 50px;
+				border: 2px solid $light;
+				color: $dark;
+				padding: 10px 18px;
+				font-weight: 600;
+				background: $white;
+				transition: .3s all ease;
+				&:hover {
+					background: $primary;
+					border-color: $primary;
+					color: $white;
+				}
+				&:focus {
+					box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+					outline: none;
+				}
+				i {
+					font-size: 12px;
+				}
+			}
+			&.active {
+				.page-link {
+					background: $primary;
+					border-color: $primary;
+					color: $white;
+				}
+			}
+			&.disabled {
+				.page-link {
+					background: $lighter;
+					border-color: $light;
+					color: rgba($dark, 0.3);
+					cursor: not-allowed;
+					&:hover {
+						background: $lighter;
+						border-color: $light;
+						color: rgba($dark, 0.3);
+					}
+				}
+			}
+		}
+	}
 }
 
 // Footer Section
 .footer-section {
-	padding: 80px 0;
+	padding: 3rem 0;
 	background: $white;
+	@media (min-width: $sm) {
+		padding: 4rem 0;
+	}
+	@media (min-width: $md) {
+		padding: 5rem 0;
+	}
+	@media (min-width: $lg) {
+		padding: 80px 0;
+	}
 	.relative {
 		position: relative;
 	}
@@ -657,23 +929,55 @@ a {
 		}
 	}
 	.subscription-form {
-		margin-bottom: 40px;
+		margin-bottom: 2rem;
 		position: relative;
 		z-index: 2;
-		margin-top: 100px;
+		margin-top: 2rem;
+		@media (min-width: $sm) {
+			margin-bottom: 2.5rem;
+			margin-top: 3rem;
+		}
+		@media (min-width: $md) {
+			margin-bottom: 3rem;
+			margin-top: 4rem;
+		}
 		@media (min-width: $lg) {
 			margin-top: 0px;
 			margin-bottom: 80px;
 		}
 		h3 {
-			font-size: 18px;
+			font-size: 16px;
 			font-weight: 500;
 			color: $primary;
+			margin-bottom: 1rem;
+			@media (min-width: $sm) {
+				font-size: 17px;
+				margin-bottom: 1.25rem;
+			}
+			@media (min-width: $md) {
+				font-size: 18px;
+				margin-bottom: 1.5rem;
+			}
+			img {
+				width: 20px;
+				height: 20px;
+				@media (min-width: $md) {
+					width: 24px;
+					height: 24px;
+				}
+			}
 		}
 		.form-control {
-			height: 50px;
+			height: 45px;
 			border-radius: 10px;
 			font-family: $font-family;
+			font-size: 14px;
+			margin-bottom: 0.75rem;
+			@media (min-width: $sm) {
+				height: 50px;
+				font-size: 15px;
+				margin-bottom: 0;
+			}
 			&:active, &:focus {
 				outline: none;
 				box-shadow: none;
@@ -681,65 +985,150 @@ a {
 				box-shadow: 0 1px 4px 0 rgba($black, .2);
 			}
 			&::-webkit-input-placeholder {
-				font-size: 14px;
+				font-size: 13px;
+				@media (min-width: $sm) {
+					font-size: 14px;
+				}
 			}
 			&::-moz-placeholder {
-				font-size: 14px;
+				font-size: 13px;
+				@media (min-width: $sm) {
+					font-size: 14px;
+				}
 			}
 			&:-ms-input-placeholder {
-				font-size: 14px;
+				font-size: 13px;
+				@media (min-width: $sm) {
+					font-size: 14px;
+				}
 			}
 			&:-moz-placeholder {
-				font-size: 14px;
+				font-size: 13px;
+				@media (min-width: $sm) {
+					font-size: 14px;
+				}
 			}
 		}
 		.btn {
 			border-radius: 10px!important;
+			width: 100%;
+			@media (min-width: $sm) {
+				width: auto;
+			}
+		}
+		.row {
+			.col-auto {
+				width: 100%;
+				margin-bottom: 0.75rem;
+				@media (min-width: $sm) {
+					width: auto;
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 
 	.sofa-img {
 		position: absolute;
-		top: -200px;
+		top: -100px;
 		z-index: 1;
 		right: 0;
+		display: none;
+		@media (min-width: $md) {
+			display: block;
+			top: -150px;
+		}
+		@media (min-width: $lg) {
+			top: -200px;
+		}
 		img {
-			max-width: 380px;
+			max-width: 250px;
+			@media (min-width: $md) {
+				max-width: 320px;
+			}
+			@media (min-width: $lg) {
+				max-width: 380px;
+			}
 		}
 	}
 
 	.links-wrap {
 		margin-top: 0px;
+		@media (min-width: $md) {
+			margin-top: 2rem;
+		}
 		@media (min-width: $lg) {
 			margin-top: 54px;
 		}
 		ul {
+			margin-bottom: 1.5rem;
+			@media (min-width: $md) {
+				margin-bottom: 0;
+			}
 			li {
-				margin-bottom: 10px;
+				margin-bottom: 8px;
+				@media (min-width: $sm) {
+					margin-bottom: 10px;
+				}
+				a {
+					font-size: 14px;
+					@media (min-width: $md) {
+						font-size: 15px;
+					}
+				}
 			}
 		}
 	}
 	.footer-logo-wrap {
+		margin-bottom: 1.5rem;
+		@media (min-width: $md) {
+			margin-bottom: 2rem;
+		}
 		.footer-logo {
-			font-size: 32px;
+			font-size: 26px;
 			font-weight: 500;
 			text-decoration: none;
 			color: $primary;
+			@media (min-width: $sm) {
+				font-size: 28px;
+			}
+			@media (min-width: $md) {
+				font-size: 32px;
+			}
+		}
+	}
+	p {
+		font-size: 14px;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		@media (min-width: $md) {
+			font-size: 15px;
+			margin-bottom: 2rem;
 		}
 	}
 	.custom-social {
 		li {
-			margin: 2px;
+			margin: 3px;
 			display: inline-block;
+			@media (min-width: $sm) {
+				margin: 2px;
+			}
 			a {
-				width: 40px;
-				height: 40px;
+				width: 36px;
+				height: 36px;
 				text-align: center;
-				line-height: 40px;
+				line-height: 36px;
 				display: inline-block;
 				background: $light;
 				color: $primary;
 				border-radius: 50%;
+				font-size: 14px;
+				@media (min-width: $sm) {
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					font-size: 16px;
+				}
 				&:hover {
 					background: $primary;
 					color: $white;
@@ -750,7 +1139,35 @@ a {
 	.border-top {
 		border-color: $light;
 		&.copyright {
-			font-size: 14px!important;
+			font-size: 13px!important;
+			@media (min-width: $sm) {
+				font-size: 14px!important;
+			}
+			p {
+				margin-bottom: 1rem;
+				@media (min-width: $md) {
+					margin-bottom: 0.5rem;
+				}
+			}
+			ul {
+				flex-direction: column;
+				align-items: center;
+				@media (min-width: $sm) {
+					flex-direction: row;
+				}
+				li {
+					margin-bottom: 0.5rem;
+					@media (min-width: $sm) {
+						margin-bottom: 0;
+					}
+					a {
+						font-size: 13px;
+						@media (min-width: $sm) {
+							font-size: 14px;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -858,13 +1275,619 @@ textarea {
 	}
 }
 
+// Modern Cart Layout
+.cart-header {
+	padding-bottom: 1rem;
+	border-bottom: 2px solid $light;
+	margin-bottom: 2rem;
+	
+	h2 {
+		font-size: 28px;
+		font-weight: 700;
+		color: $dark;
+		margin-bottom: 0.5rem;
+		@media (max-width: $md) {
+			font-size: 24px;
+		}
+	}
+	
+	p {
+		font-size: 14px;
+	}
+}
+
+.cart-item-card {
+	background: $white;
+	border: 1px solid $light;
+	border-radius: 12px;
+	padding: 1.5rem;
+	transition: all 0.3s ease;
+	
+	&:hover {
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		border-color: rgba($primary, 0.2);
+	}
+	
+	.cart-item-image {
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+	}
+	
+	.cart-item-details {
+		position: relative;
+		
+		h5 {
+			font-size: 18px;
+			font-weight: 600;
+			color: $dark;
+			margin-bottom: 0.25rem;
+			@media (max-width: $md) {
+				font-size: 16px;
+			}
+		}
+		
+		.remove-item {
+			font-size: 18px;
+			transition: all 0.3s ease;
+			background: transparent !important;
+			border: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			box-shadow: none !important;
+			
+			&:hover {
+				transform: scale(1.1);
+				color: darken(red, 10%) !important;
+				background: transparent !important;
+			}
+			
+			&:focus, &:active {
+				background: transparent !important;
+				border: none !important;
+				box-shadow: none !important;
+				outline: none !important;
+			}
+		}
+	}
+	
+	.quantity-group {
+		max-width: 140px;
+		
+		.quantity-btn {
+			width: 36px;
+			height: 36px;
+			padding: 0;
+			border-color: $light;
+			// color: $dark;
+			font-weight: 600;
+			transition: all 0.3s ease;
+			
+			&:hover {
+				background: $primary;
+				border-color: $primary;
+				color: $white;
+			}
+		}
+		
+		.quantity-input {
+			height: 36px;
+			border-color: $light;
+			font-weight: 600;
+			max-width: 60px;
+			
+			&:focus {
+				border-color: $primary;
+				box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+			}
+		}
+	}
+	
+	.cart-item-price {
+		.price-label {
+			font-size: 14px;
+			color: $body_color;
+		}
+		
+		strong {
+			font-size: 20px;
+			font-weight: 700;
+			@media (max-width: $md) {
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+.cart-actions {
+	.btn {
+		border-radius: 8px;
+		font-weight: 600;
+		padding: 0.75rem 1.5rem;
+		transition: all 0.3s ease;
+		
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+		}
+	}
+}
+
+.coupon-section {
+	.card {
+		border-radius: 12px;
+		
+		.card-body {
+			padding: 1.5rem;
+		}
+		
+		.card-title {
+			font-size: 18px;
+			font-weight: 600;
+			color: $dark;
+		}
+		
+		.input-group {
+			.form-control {
+				border-radius: 8px 0 0 8px;
+				border-right: none;
+			}
+			
+			.btn {
+				border-radius: 0 8px 8px 0;
+				border-left: none;
+			}
+		}
+	}
+}
+
+.cart-summary-card {
+	.card {
+		border-radius: 12px;
+		
+		.card-body {
+			padding: 2rem;
+			@media (max-width: $md) {
+				padding: 1.5rem;
+			}
+		}
+		
+		.card-title {
+			font-size: 22px;
+			font-weight: 700;
+			color: $dark;
+			margin-bottom: 1.5rem;
+			@media (max-width: $md) {
+				font-size: 20px;
+			}
+		}
+		
+		.summary-item {
+			font-size: 15px;
+			
+			span {
+				&:last-child {
+					font-weight: 600;
+					color: $dark;
+				}
+			}
+		}
+		
+		.summary-total {
+			span {
+				&:first-child {
+					font-size: 20px;
+					font-weight: 700;
+					color: $dark;
+				}
+				
+				&:last-child {
+					font-size: 28px;
+					font-weight: 700;
+					@media (max-width: $md) {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+		
+		.btn-primary {
+			border-radius: 8px;
+			font-weight: 600;
+			transition: all 0.3s ease;
+			
+			&:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 6px 12px rgba($primary, 0.3);
+			}
+		}
+	}
+}
+
+// Responsive Cart
+
+// Tablet and below (max-width: 991px)
+@media (max-width: $lg) {
+	.cart-header {
+		h2 {
+			font-size: 26px;
+		}
+	}
+	
+	.cart-item-card {
+		padding: 1.25rem;
+		
+		.cart-item-image {
+			img {
+				border-radius: 6px;
+			}
+		}
+		
+		.cart-item-details {
+			h5 {
+				font-size: 17px;
+			}
+		}
+		
+		.quantity-group {
+			max-width: 120px;
+			
+			.quantity-btn {
+				width: 32px;
+				height: 32px;
+				font-size: 14px;
+			}
+			
+			.quantity-input {
+				height: 32px;
+				font-size: 14px;
+			}
+		}
+		
+		.cart-item-price {
+			strong {
+				font-size: 19px;
+			}
+		}
+	}
+	
+	.cart-summary-card {
+		.card {
+			.card-body {
+				padding: 1.75rem;
+			}
+			
+			.card-title {
+				font-size: 21px;
+			}
+			
+			.summary-total {
+				span {
+					&:last-child {
+						font-size: 26px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Mobile and Tablet (max-width: 767px)
+@media (max-width: $md) {
+	.cart-header {
+		padding-bottom: 0.75rem;
+		margin-bottom: 1.5rem;
+		
+		h2 {
+			font-size: 22px;
+			margin-bottom: 0.25rem;
+		}
+		
+		p {
+			font-size: 13px;
+		}
+	}
+	
+	.cart-item-card {
+		padding: 1rem;
+		border-radius: 10px;
+		margin-bottom: 1rem;
+		
+		.cart-item-image {
+			margin-bottom: 0.75rem;
+			
+			img {
+				border-radius: 6px;
+			}
+		}
+		
+		.cart-item-details {
+			h5 {
+				font-size: 16px;
+				margin-bottom: 0.25rem;
+			}
+			
+			small {
+				font-size: 12px;
+			}
+			
+			.d-flex {
+				flex-direction: column;
+				align-items: flex-start !important;
+				gap: 0.75rem;
+			}
+			
+			.remove-item {
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+				font-size: 16px;
+			}
+			
+			.quantity-controls {
+				width: 100%;
+				margin-bottom: 0.75rem;
+				
+				.quantity-group {
+					max-width: 100%;
+					
+					.quantity-btn {
+						width: 38px;
+						height: 38px;
+						font-size: 16px;
+					}
+					
+					.quantity-input {
+						height: 38px;
+						font-size: 16px;
+						max-width: 70px;
+					}
+				}
+			}
+			
+			.cart-item-price {
+				width: 100%;
+				text-align: left;
+				padding-top: 0.5rem;
+				border-top: 1px solid $light;
+				
+				.price-label {
+					font-size: 13px;
+					margin-right: 0.5rem;
+				}
+				
+				strong {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	
+	.cart-actions {
+		margin-top: 1.5rem;
+		
+		.btn {
+			width: 100%;
+			padding: 0.875rem 1.25rem;
+			font-size: 14px;
+			margin-bottom: 0.75rem;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+	.coupon-section {
+		margin-top: 1.5rem;
+		
+		.card {
+			.card-body {
+				padding: 1.25rem;
+			}
+			
+			.card-title {
+				font-size: 16px;
+				margin-bottom: 0.75rem;
+				
+				i {
+					font-size: 14px;
+				}
+			}
+			
+			p {
+				font-size: 13px;
+				margin-bottom: 1rem;
+			}
+			
+			.input-group {
+				flex-direction: column;
+				
+				.form-control {
+					border-radius: 8px;
+					margin-bottom: 0.75rem;
+					width: 100%;
+				}
+				
+				.btn {
+					border-radius: 8px;
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+	.cart-summary-card {
+		margin-top: 2rem;
+		
+		.card {
+			position: relative !important;
+			top: 0 !important;
+			border-radius: 10px;
+			
+			.card-body {
+				padding: 1.5rem;
+			}
+			
+			.card-title {
+				font-size: 18px;
+				margin-bottom: 1.25rem;
+			}
+			
+			.summary-item {
+				font-size: 14px;
+				margin-bottom: 0.75rem;
+				
+				span {
+					&:last-child {
+						font-size: 14px;
+					}
+				}
+			}
+			
+			.summary-total {
+				margin-top: 1rem;
+				margin-bottom: 1.5rem;
+				padding-top: 1rem;
+				
+				span {
+					&:first-child {
+						font-size: 18px;
+					}
+					
+					&:last-child {
+						font-size: 22px;
+					}
+				}
+			}
+			
+			.btn-primary {
+				padding: 1rem;
+				font-size: 16px;
+				
+				i {
+					font-size: 14px;
+				}
+			}
+			
+			small {
+				font-size: 11px;
+				
+				i {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+}
+
+// Small Mobile (max-width: 575px)
+@media (max-width: $sm) {
+	.cart-header {
+		h2 {
+			font-size: 20px;
+		}
+		
+		p {
+			font-size: 12px;
+		}
+	}
+	
+	.cart-item-card {
+		padding: 0.875rem;
+		
+		.cart-item-details {
+			h5 {
+				font-size: 15px;
+			}
+			
+			.remove-item {
+				top: 0.875rem;
+				right: 0.875rem;
+				font-size: 15px;
+			}
+			
+			.quantity-group {
+				.quantity-btn {
+					width: 36px;
+					height: 36px;
+					font-size: 15px;
+				}
+				
+				.quantity-input {
+					height: 36px;
+					font-size: 15px;
+					max-width: 60px;
+				}
+			}
+			
+			.cart-item-price {
+				strong {
+					font-size: 17px;
+				}
+			}
+		}
+	}
+	
+	.cart-actions {
+		.btn {
+			font-size: 13px;
+			padding: 0.75rem 1rem;
+			
+			i {
+				font-size: 12px;
+			}
+		}
+	}
+	
+	.coupon-section {
+		.card {
+			.card-body {
+				padding: 1rem;
+			}
+			
+			.card-title {
+				font-size: 15px;
+			}
+		}
+	}
+	
+	.cart-summary-card {
+		.card {
+			.card-body {
+				padding: 1.25rem;
+			}
+			
+			.card-title {
+				font-size: 17px;
+			}
+			
+			.summary-total {
+				span {
+					&:first-child {
+						font-size: 16px;
+					}
+					
+					&:last-child {
+						font-size: 20px;
+					}
+				}
+			}
+			
+			.btn-primary {
+				padding: 0.875rem;
+				font-size: 15px;
+			}
+		}
+	}
+}
+
 
 .couponcode-wrap {
 	input {
 		border-radius: 10px!important;
-	}
-	.btn {
-
 	}
 }
 .text-primary {
@@ -883,3 +1906,6 @@ textarea {
 		background:rgba($primary, .2);
 	}
 }
+
+// Import Blog Detail Styles
+@import 'blog-detail';
